@@ -1,0 +1,81 @@
+		.row {
+			/*display: flex;*/
+			/*justify-content: space-evenly;*/
+		} 
+		.cell {
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			margin: 0px;
+		}
+		
+		
+		.black {
+			background-color: black;
+		}
+		
+		.crimson {
+		    background-color: darkred;
+		}
+		
+		.checker{
+		    margin: auto; right; bottom; left;
+			border-radius: 50px; 
+				
+		}
+		
+		.grey-checker {
+			background-color:  darkgray;
+			height: 80px;
+			width: 80px;
+			
+		}
+		
+		.red-checker {
+			background-color: crimson;
+			height: 80px;
+			width: 80px;
+			
+		}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
