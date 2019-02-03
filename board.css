@@ -1,3 +1,10 @@
+		body {
+		background-color: #dddddd;	
+		text-align: center;	
+		}
+		#board-container {
+        background-image: url("snow-planet.jpg");
+		} 
 		.row {
 			/*display: flex;*/
 			/*justify-content: space-evenly;*/
@@ -11,11 +18,12 @@
 		
 		
 		.black {
-			background-color: black;
+			background-image: url("thanos.jpg");
 		}
 		
 		.crimson {
-		    background-color: darkred;
+			/*background-color: darkred;*/
+			background-image: url("cap.jpg");
 		}
 		
 		.checker{
@@ -25,14 +33,17 @@
 		}
 		
 		.grey-checker {
-			background-color:  darkgray;
+			background-image: url("go-stone-gold.png");
+			background-size: cover;
 			height: 80px;
 			width: 80px;
 			
 		}
 		
 		.red-checker {
-			background-color: crimson;
+			/*background-color: crimson;*/
+			background-image: url("go-stone-white..png");
+			background-size: cover;
 			height: 80px;
 			width: 80px;
 			
