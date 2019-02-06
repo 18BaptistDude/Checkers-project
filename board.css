@@ -3,49 +3,58 @@
 		text-align: center;	
 		}
 		#board-container {
-        background-image: url("snow-planet.jpg");
+		background-image: url("space.jpg");
+		display: inline-block;
+		padding: 2%;
 		} 
 		.row {
 			/*display: flex;*/
 			/*justify-content: space-evenly;*/
 		} 
 		.cell {
-			width: 100px;
-			height: 100px;
+			width: 8vw;
+			height: 8vw;
 			display: inline-block;
 			margin: 0px;
+			max-width: 11vh;
+			max-height: 11vh;
+			
 		}
 		
 		
 		.black {
-			background-image: url("thanos.jpg");
+			background-image: url("gauntlet.jpg");
+			background-size: contain;
 		}
 		
-		.crimson {
+		.crimson { 
 			/*background-color: darkred;*/
-			background-image: url("cap.jpg");
+			background-image: url("stormbreaker.jpg");
+			background-size: contain;
 		}
 		
 		.checker{
-		    margin: auto; right; bottom; left;
-			border-radius: 50px; 
+			margin: 10%;
+			border-radius: 50%;
+			height: 80%;
+			width: 80%; 
 				
 		}
 		
 		.grey-checker {
-			background-image: url("go-stone-gold.png");
+			background-image: url("thanos.jpg");
 			background-size: cover;
-			height: 80px;
-			width: 80px;
+			
+			
 			
 		}
 		
 		.red-checker {
 			/*background-color: crimson;*/
-			background-image: url("go-stone-white..png");
+			background-image: url("cap.jpg");
 			background-size: cover;
-			height: 80px;
-			width: 80px;
+			
+			
 			
 		}   
 
