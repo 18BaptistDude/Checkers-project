@@ -1,4 +1,3 @@
-var yummyFood= `bacon`
 console.log(`some stuff in: ${yummyFood}
 more stuff in: ${yummyFood}
 <div id="row-1" class="row">
