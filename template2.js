@@ -1,43 +1,52 @@
-function cellTemplate(rowNum, cellNum) {
-    var isCellEven = true
-    var isRowEven = true    
-    if (cellNum % 2 == 1) isCellEven = false
-    if (rowNum % 2 == 1) isRowEven = false
-
-    if (isCellEven != isRowEven) {
-        // black cell
-        let cellString = `<div id="cell-${rowNum}-${cellNum}" class="cell black">`
-        if (rowNum <=3) {
-              cellString = cellString + `<div class="checker red-checker"></div>
-              <div class="checker grey-checker" hidden></div>` 
-        } else if (rowNum >= 6) {
-            cellString = cellString + `<div class="checker grey-checker"></div>
-              <div class="checker grey-checker" hidden></div>`
-        } else {
-            cellString = cellString + `<div class="checker grey-checker"></div><div class="checker grey-checker" hidden></div>`  
-        }
-        cellString = cellString + `</div>`
-        return cellString
-        } else
-        // white cell
-         return `<div id="cell-${rowNum}-${cellNum}" class="cell crimson"></div>`
+function renderBoard() {
+    return ` 
+        ${renderRow(1)}
+        ${renderRow(2)}     
+        ${renderRow(3)}
+        ${renderRow(4)}
+        ${renderRow(5)}
+        ${renderRow(6)}
+        ${renderRow(7)}
+        ${renderRow(8)}
+     `
 }
 
-function rowTemplate(rowNum) {
-    console.log(`drawing row number ${rowNum}`)
-    var rowString = ''
-    rowString = rowString + `<div id="row-${rowNum}" class="row">`
-    for (var cellNum=1; cellNum<=8; cellNum++) {
-        rowString = rowString + cellTemplate(rowNum, cellNum)
+function renderRow(rowNum) {
+return `<div id="row-${rowNum}" class="row">
+       ${renderCell(rowNum, 1)}
+       ${renderCell(rowNum, 2)}
+       ${renderCell(rowNum, 3)}
+       ${renderCell(rowNum, 4)}
+       ${renderCell(rowNum, 5)}
+       ${renderCell(rowNum, 6)}
+       ${renderCell(rowNum, 7)}
+       ${renderCell(rowNum, 8)}    
+       </div>`
+}
+function renderCell(rowNum, cellNum) {
+    console.log(`renderCell the rowNum is ${rowNum}, the cellNum is ${cellNum}`)
+        if (cellColor(rowNum, cellNum) === `grey`) {
+    // black cell
+    return `<div id="cell-${rowNum}-${cellNum}" class="cell black">${renderChecker (rowNum)}</div>`
+    } else 
+    // white cell 
+    return `<div id="cell-${rowNum}-${cellNum}" class="cell crimson"></div>`
+}   
+function renderChecker (rowNum) {
+    if (rowNum <= 3) {
+      return `<div class="checker red-checker"></div>`   
+    } else if (rowNum >= 6) {
+      return `<div class="checker grey-checker"></div>`
+    } else {
+      return `<div class="checker grey-checker" hidden="true"></div>`
     }
-    rowString = rowString + `</div>`
-    return rowString
 }
 
-function boardTemplate() {
-    var boardString = ''
-    for (var rowNum=1; rowNum<=8; rowNum++) {
-        boardString = boardString + rowTemplate(rowNum)
-    }
-    return boardString
+/***Helper Methods***/
+function parity(num) {
+    return (num % 2 === 0) ? `even` : `odd`
+}
+function cellColor(rowNum, cellNum){
+    return (parity(rowNum) === parity(cellNum)) ? `red` : `grey`
+ 
 }
