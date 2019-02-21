@@ -1,3 +1,18 @@
+var checkers = [
+    {row: 1, cell: 2, color: 'white'},
+    {row: 1, cell: 4, color: 'white'},
+    {row: 1, cell: 6, color: 'white'},
+    {row: 1, cell: 8, color: 'white'},
+    {row: 2, cell: 1, color: 'white'},
+    {row: 2, cell: 3, color: 'white'},
+    {row: 2, cell: 5, color: 'white'},
+    {row: 2, cell: 7, color: 'white'},
+    {row: 3, cell: 2, color: 'white'},
+    {row: 3, cell: 4, color: 'white'},
+    {row: 3, cell: 6, color: 'white'},
+    {row: 3, cell: 8, color: 'white'},
+]
+
 function renderBoard() {
     return ` 
         ${renderRow(1)}
@@ -24,13 +39,12 @@ return `<div id="row-${rowNum}" class="row">
        </div>`
 }
 function renderCell(rowNum, cellNum) {
-    console.log(`renderCell the rowNum is ${rowNum}, the cellNum is ${cellNum}`)
         if (cellColor(rowNum, cellNum) === `grey`) {
     // black cell
     return `<div id="cell-${rowNum}-${cellNum}" class="cell black">${renderChecker (rowNum)}</div>`
     } else 
     // white cell 
-    return `<div id="cell-${rowNum}-${cellNum}" class="cell crimson"></div>`
+    return `<div id="cell-${rowNum}-${cellNum}" class="cell white"></div>`
 }   
 function renderChecker (rowNum) {
     if (rowNum <= 3) {
